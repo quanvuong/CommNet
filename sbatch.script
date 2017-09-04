@@ -3,12 +3,13 @@
 #SBATCH --output=output.slurm
 
 #SBATCH --time=12:00:00
-#SBATCH --cpus-per-task=18
+#SBATCH --cpus-per-task=15
 #SBATCH --mem=50000mb
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT
 #SBATCH --mail-user=qhv200@nyu.edu
+#SBATCH --partition=share
+#SBATCH --nodelist=compute5
 
-source activate /gpfsnyu/scratch/qhv200/conda_envs/lua
 module load torch
 cd /gpfsnyu/scratch/qhv200/comm_net_branches/experimental
 
