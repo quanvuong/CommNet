@@ -1,0 +1,16 @@
+Train LSTM CommNet on easy traffic task.
+
+th main.lua --lrate 0.003 --model lstm --games_config_path games/config/crossing_easy.lua \
+--nagents 5 --max_steps 20 --nactions 2 --curriculum_sta 10 --curriculum_end 40 --comm \
+--visibility 0 --show --epochs 50 --show
+
+
+
+Train independent controller on easy traffic task.
+
+th main.lua --lrate 0.003 --model mlp --games_config_path games/config/crossing_easy.lua \
+--nagents 5 --max_steps 20 --nactions 2 --curriculum_sta 10 --curriculum_end 40 \
+--visibility 1 --show --epochs 50
+
+# Check
+1. Does nagents mean the total number of agents ? How does nagents fit into curr training ? In the appendix, it says that N_total is increased from 3 to 5 for easy task
