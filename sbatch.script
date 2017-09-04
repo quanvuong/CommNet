@@ -9,6 +9,7 @@
 #SBATCH --mail-user=qhv200@nyu.edu
 
 source activate /gpfsnyu/scratch/qhv200/conda_envs/lua
+module load torch
 cd /gpfsnyu/scratch/qhv200/comm_net_branches/experimental
 
 OMP_NUM_THREADS=4 th main.lua --lrate 0.003 --model mlp --games_config_path games/config/crossing_easy.lua \
