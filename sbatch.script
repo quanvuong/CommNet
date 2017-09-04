@@ -15,4 +15,4 @@ cd /gpfsnyu/scratch/qhv200/comm_net_branches/experimental
 
 OMP_NUM_THREADS=4 th main.lua --lrate 0.003 --model mlp --games_config_path games/config/crossing_easy.lua \
 --nagents 5 --max_steps 20 --nactions 2 --curriculum_sta 10 --curriculum_end 40 \
---visibility 1 --show --epochs 50
+--visibility 1 --show --epochs 50 --save saved_policy
