@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#SBATCH --job-name=comm_net_experimental
+#SBATCH --output=output.slurm
+
+#SBATCH --time=12:00:00
+#SBATCH --cpus-per-task=18
+#SBATCH --mem=50000mb
+#SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT
+#SBATCH --mail-user=qhv200@nyu.edu
+
+source activate /scratch/qhv200/conda3-envs/lua
+cd /scratch/qhv200/comm_net_branches/experimental
+
+th main.lua --lrate 0.003 --model mlp --games_config_path games/config/crossing_easy.lua \
+--nagents 5 --max_steps 20 --nactions 2 --curriculum_sta 10 --curriculum_end 40 \
+--visibility 1 --show --epochs 50
