@@ -8,8 +8,8 @@
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT
 #SBATCH --mail-user=qhv200@nyu.edu
 
-source activate /scratch/qhv200/conda3-envs/lua
-cd /scratch/qhv200/comm_net_branches/experimental
+source activate /gpfsnyu/scratch/qhv200/conda_envs/lua
+cd /gpfsnyu/scratch/qhv200/comm_net_branches/experimental
 
 th main.lua --lrate 0.003 --model mlp --games_config_path games/config/crossing_easy.lua \
 --nagents 5 --max_steps 20 --nactions 2 --curriculum_sta 10 --curriculum_end 40 \
